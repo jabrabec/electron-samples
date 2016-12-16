@@ -1,6 +1,6 @@
 // Run this function after the page has loaded
 // $(function displayWindow() {
-function displayWindow() {
+function displayCPUTime() {
 
 var os = require('os'); // https://nodejs.org/api/os.html
 
@@ -26,6 +26,7 @@ for (var i = 0; i < cpus.length; i++) {
 
   // Add cpu data to datasets
   datasets.push(cpuData);
+  console.log(cpuData.data);
 }
 
 // Create and render the chart
@@ -59,4 +60,4 @@ var chart = new Chart($('.chart'), {
 
 }
 
-var pageRefresh = setInterval("displayWindow()", 1000);
+var cpuWindowRefresh = setInterval("displayCPUTime()", 1000);
