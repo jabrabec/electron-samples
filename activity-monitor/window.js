@@ -24,7 +24,7 @@ for (var i = 0; i < cpus.length; i++) {
 
   // Add cpu data to datasets
   datasets.push(cpuData);
-  console.log(cpuData.data);
+  // console.log(cpuData.data);
 }
 
 // Create and render the chart
@@ -66,9 +66,9 @@ var os = require('os'); // https://nodejs.org/api/os.html
 var datasets = [];
 
 // Loop over the CPUs on the current machine
-var totalMem = os.totalmem();
-var freeMem = os.freemem();
-var usedMem = totalMem - freeMem;
+var totalMem = (os.totalmem() * Math.pow(10, -9)).toFixed(2); // convert to gb, 2 decimals
+var freeMem = (os.freemem() * Math.pow(10, -9)).toFixed(2); // convert to gb, 2 decimals
+var usedMem = (totalMem - freeMem); // calc usedMem, already is in gb;
 
 var memData = {
     data: [
@@ -92,8 +92,8 @@ var chart = new Chart($('.chart-pie'), {
   type: 'pie',
   data: {
     labels: [
-      'Used (bytes)',
-      'Free (bytes)'
+      'Used (gigabytes)',
+      'Free (gigabytes)'
     ],
     datasets: datasets
   },
