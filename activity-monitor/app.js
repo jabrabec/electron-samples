@@ -9,9 +9,9 @@ electron.app.once('ready', function () {
   // Create a new window
   window = new electron.BrowserWindow({
     // Set the initial width to 1000px
-    width: 1000,
+    width: 750,
     // Set the initial height to 800px
-    height: 800,
+    height: 1200,
     // Show the minimize/maximize buttons inset in the window on macOS
     titleBarStyle: 'hidden-inset',
     // Set the default background color of the window to match the CSS
