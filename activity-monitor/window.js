@@ -1,5 +1,6 @@
 // Run this function after the page has loaded
-$(function () {
+// $(function displayWindow() {
+function displayWindow() {
 
 var os = require('os') // https://nodejs.org/api/os.html
 
@@ -56,4 +57,6 @@ var chart = new Chart($('.chart'), {
   }
 })
 
-})
+}
+
+var pageRefresh = setInterval("displayWindow()", 1000);
