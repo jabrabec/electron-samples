@@ -70,9 +70,51 @@ var totalMem = os.totalmem();
 var freeMem = os.freemem();
 var usedMem = totalMem - freeMem;
 
+var memData = {
+    data: [
+      usedMem,
+      freeMem
+    ],
+    backgroundColor: [
+      'rgba(255, 99, 132, 1)',
+      'rgba(54, 162, 235, 1)'
+    ]
+  };
+
   // Add cpu data to datasets
-  // datasets.push(cpuData);
-console.log('used: ' + usedMem + ', free: ' + freeMem + ', total: ' + totalMem);
+  datasets.push(memData);
+  console.log(memData);
+  console.log('used: ' + usedMem + ', free: ' + freeMem + ', total: ' + totalMem);
+
+
+// Create and render the chart
+var chart = new Chart($('.chart'), {
+  type: 'pie',
+  data: {
+    labels: [
+      'Used (bytes)',
+      'Free (bytes)'
+    ],
+    datasets: datasets
+  },
+  options: {
+    maintainAspectRatio: false,
+    title: {
+      display: true,
+      text: 'Memory Usage',
+      fontColor: 'rgb(250, 250, 250)',
+      fontSize: 16
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontColor: 'rgb(250, 250, 250)',
+        fontSize: 12
+      }
+    }
+  }
+});
+
 }
 
 
