@@ -1,5 +1,3 @@
-// Run this function after the page has loaded
-// $(function displayWindow() {
 function displayCPUTime() {
 
 var os = require('os'); // https://nodejs.org/api/os.html
@@ -60,4 +58,25 @@ var chart = new Chart($('.chart'), {
 
 }
 
+
+function displayMemUsage() {
+
+var os = require('os'); // https://nodejs.org/api/os.html
+
+var datasets = [];
+
+// Loop over the CPUs on the current machine
+var totalMem = os.totalmem();
+var freeMem = os.freemem();
+var usedMem = totalMem - freeMem;
+
+  // Add cpu data to datasets
+  // datasets.push(cpuData);
+console.log('used: ' + usedMem + ', free: ' + freeMem + ', total: ' + totalMem);
+}
+
+
+
+// Run this function after the page has loaded, refresh every 1sec
 var cpuWindowRefresh = setInterval("displayCPUTime()", 1000);
+var memoryWindowRefresh = setInterval("displayMemUsage()", 1000);
