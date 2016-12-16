@@ -9,5 +9,6 @@ html {
 }
 
 .container-fluid {
+  height: 50%;
   padding: 25px;
 }
