@@ -2,14 +2,14 @@
 // $(function displayWindow() {
 function displayWindow() {
 
-var os = require('os') // https://nodejs.org/api/os.html
+var os = require('os'); // https://nodejs.org/api/os.html
 
-var datasets = []
+var datasets = [];
 
 // Loop over the CPUs on the current machine
-var cpus = os.cpus()
+var cpus = os.cpus();
 for (var i = 0; i < cpus.length; i++) {
-  var cpu = cpus[i]
+  var cpu = cpus[i];
 
   var cpuData = {
     data: [
@@ -22,10 +22,10 @@ for (var i = 0; i < cpus.length; i++) {
       'rgba(54, 162, 235, 1)',
       'rgba(255, 206, 86, 1)'
     ]
-  }
+  };
 
   // Add cpu data to datasets
-  datasets.push(cpuData)
+  datasets.push(cpuData);
 }
 
 // Create and render the chart
@@ -55,8 +55,8 @@ var chart = new Chart($('.chart'), {
       }
     }
   }
-})
+});
 
 }
 
-var pageRefresh = setInterval("displayWindow()", 500);
+var pageRefresh = setInterval("displayWindow()", 1000);
