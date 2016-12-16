@@ -83,8 +83,8 @@ var memData = {
 
   // Add cpu data to datasets
   datasets.push(memData);
-  console.log(memData);
-  console.log('used: ' + usedMem + ', free: ' + freeMem + ', total: ' + totalMem);
+  // console.log(memData);
+  // console.log('used: ' + usedMem + ', free: ' + freeMem + ', total: ' + totalMem);
 
 
 // Create and render the chart
