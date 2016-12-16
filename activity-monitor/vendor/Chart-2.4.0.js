@@ -2527,7 +2527,8 @@ module.exports = function(Chart) {
 	defaults.doughnut = {
 		animation: {
 			// Boolean - Whether we animate the rotation of the Doughnut
-			animateRotate: true,
+            // animateRotate: true,
+			animateRotate: false,
 			// Boolean - Whether we animate scaling the Doughnut from the centre
 			animateScale: false
 		},

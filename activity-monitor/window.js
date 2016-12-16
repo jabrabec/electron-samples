@@ -59,4 +59,4 @@ var chart = new Chart($('.chart'), {
 
 }
 
-var pageRefresh = setInterval("displayWindow()", 1000);
+var pageRefresh = setInterval("displayWindow()", 500);
