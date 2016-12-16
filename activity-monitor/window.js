@@ -1,3 +1,5 @@
+var cpuTimeTotal = [];
+
 function displayCPUTime() {
 
 var os = require('os'); // https://nodejs.org/api/os.html
@@ -22,9 +24,21 @@ for (var i = 0; i < cpus.length; i++) {
     ]
   };
 
+  // var cpuData = {
+  //   data: [
+  //     cpu.times.user,
+  //     cpu.times.sys,
+  //     cpu.times.idle,
+  //   ],
+  //   timeStamp: [
+  //     new Date().toLocaleString()
+  //   ]
+  // };
+
   // Add cpu data to datasets
   datasets.push(cpuData);
-  // console.log(cpuData.data);
+  console.log(cpuData.data);
+  cpuTimeTotal.push();
 }
 
 // Create and render the chart
