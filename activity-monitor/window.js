@@ -28,7 +28,7 @@ for (var i = 0; i < cpus.length; i++) {
 }
 
 // Create and render the chart
-var chart = new Chart($('.chart'), {
+var chart = new Chart($('.chart-doughnut'), {
   type: 'doughnut',
   data: {
     labels: [
@@ -88,7 +88,7 @@ var memData = {
 
 
 // Create and render the chart
-var chart = new Chart($('.chart'), {
+var chart = new Chart($('.chart-pie'), {
   type: 'pie',
   data: {
     labels: [
